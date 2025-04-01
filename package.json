@@ -1,0 +1,17 @@
+{
+  "name": "geniusmoving",
+  "version": "1.0.0",
+  "description": "GeniusMoving website with Cypress testing",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "cypress run --spec \"cypress/e2e/**/*.spec.js\"",
+    "cypress:open": "cypress open",
+    "start": "http-server -p 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.2.1"
+  }
+}

@@ -27,10 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Forgot password handler
-    forgotPasswordLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        alert('Password reset functionality would be implemented here.');
-    });
+    // Removed the event listener that was preventing navigation
     
     // Request demo handler
     if (requestDemoBtn) {

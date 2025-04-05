@@ -1,0 +1,76 @@
+/* GeniusMoving Design Tokens */
+
+:root {
+  /* Color Tokens */
+  --gm-color-primary: #65c87a;
+  --gm-color-primary-100: #e6f7f1;
+  --gm-color-primary-200: #c6f4d6;
+  --gm-color-primary-300: #8bc34a;
+  --gm-color-primary-400: #65c87a;
+  --gm-color-primary-500: #22913a;
+  --gm-color-primary-600: #0b6b3a;
+  --gm-color-data-viz-002: #24b1fd;
+  
+  /* Gray Scale */
+  --gm-color-gray-filled-100: #f2f2f2;
+  --gm-color-gray-filled-200: #e6e6e6;
+  --gm-color-gray-filled-300: #cccccc;
+  --gm-color-gray-filled-400: #999999;
+  --gm-color-gray-filled-500: #5c5c5c;
+  --gm-color-gray-filled-600: #212121;
+  
+  /* Feedback Colors */
+  --gm-color-success: #65c87a;
+  --gm-color-success-500: #22913a;
+  --gm-color-warning: #e37f46;
+  --gm-color-danger: #e94b35;
+  
+  /* Typography */
+  --gm-font-family-primary: 'proxima-soft', sans-serif;
+  --gm-font-size-xs: 0.75rem;   /* 12px */
+  --gm-font-size-sm: 0.875rem;  /* 14px */
+  --gm-font-size-md: 1rem;      /* 16px */
+  --gm-font-size-lg: 1.25rem;   /* 20px */
+  --gm-font-size-xl: 1.5rem;    /* 24px */
+  --gm-font-size-2xl: 2rem;     /* 32px */
+  --gm-font-size-3xl: 2.5rem;   /* 40px */
+  
+  /* Font Weights */
+  --gm-font-weight-regular: 400;
+  --gm-font-weight-medium: 500;
+  --gm-font-weight-semibold: 600;
+  --gm-font-weight-bold: 700;
+  
+  /* Spacing */
+  --gm-spacing-xs: 0.25rem;   /* 4px */
+  --gm-spacing-sm: 0.5rem;     /* 8px */
+  --gm-spacing-md: 1rem;       /* 16px */
+  --gm-spacing-lg: 1.5rem;     /* 24px */
+  --gm-spacing-xl: 2rem;       /* 32px */
+  --gm-spacing-2xl: 3rem;      /* 48px */
+  
+  /* Border Radius */
+  --gm-border-radius-sm: 4px;
+  --gm-border-radius-md: 8px;
+  --gm-border-radius-lg: 50px;
+  
+  /* Shadows */
+  --gm-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --gm-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --gm-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --gm-transition-fast: 0.2s ease;
+  --gm-transition-normal: 0.3s ease;
+  --gm-transition-slow: 0.5s ease;
+  
+  /* Z-index layers */
+  --gm-z-index-dropdown: 100;
+  --gm-z-index-sticky: 200;
+  --gm-z-index-fixed: 300;
+  --gm-z-index-modal-backdrop: 400;
+  --gm-z-index-modal: 500;
+  --gm-z-index-popover: 600;
+  --gm-z-index-toast: 700;
+  --gm-z-index-tooltip: 800;
+}

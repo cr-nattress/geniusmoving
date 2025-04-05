@@ -6,12 +6,40 @@
   "scripts": {
     "test": "cypress run --spec \"cypress/e2e/**/*.spec.js\"",
     "cypress:open": "cypress open",
-    "start": "http-server -p 8080"
+    "start": "http-server -p 8080",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,css,html}\"",
+    "format:check": "prettier --check \"**/*.{js,json,css,html}\"",
+    "serve": "serve -s . -l 5000",
+    "security:audit": "npm audit",
+    "security:check": "node scripts/security-check.js",
+    "lh": "lighthouse http://localhost:5000 --output html --output-path ./reports/lighthouse-report.html",
+    "lh:security": "lighthouse http://localhost:5000 --output html --output-path ./reports/security-report.html --only-categories=best-practices,pwa",
+    "lh:ci": "npm-run-all --serial serve:start lh:headless serve:stop",
+    "lh:headless": "lighthouse http://localhost:5000 --output json --output-path=./reports/lighthouse-report.json --chrome-flags=\"--headless\"",
+    "serve:start": "serve -s . -l 5000 & wait-on http://localhost:5000",
+    "serve:stop": "taskkill /F /IM node.exe /T",
+    "security:full": "npm-run-all --serial security:audit serve:start lh:security serve:stop",
+    "prebuild": "npm-run-all lint security:audit",
+    "build": "echo \"Build process would run here\"",
+    "postbuild": "npm-run-all --serial serve:start lh:headless serve:stop"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.2.1"
+    "cypress": "^14.2.1",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "lighthouse": "^11.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.4",
+    "serve": "^14.2.1",
+    "wait-on": "^7.2.0"
   }
 }

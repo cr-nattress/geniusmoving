@@ -27,7 +27,7 @@ Cypress.Commands.add('login', (email, password) => {
  */
 Cypress.Commands.add('validateField', (selector, value, shouldBeValid = true) => {
   cy.get(selector).clear().type(value).blur();
-  
+
   // Use :valid and :invalid pseudo-classes for HTML5 validation
   if (shouldBeValid) {
     cy.get(`${selector}:valid`).should('exist');

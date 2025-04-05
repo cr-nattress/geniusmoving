@@ -11,7 +11,7 @@ class LoginPage {
     submitButton: () => cy.get('[data-cy=login-button]'),
     forgotPasswordLink: () => cy.get('[data-cy=forgot-password]'),
     rememberMeCheckbox: () => cy.get('[data-cy=remember-me]'),
-    logo: () => cy.get('[data-cy=logo]')
+    logo: () => cy.get('[data-cy=logo]'),
   };
 
   // Actions
@@ -75,7 +75,8 @@ class LoginPage {
   }
 
   validateLogo() {
-    this.elements.logo()
+    this.elements
+      .logo()
       .should('be.visible')
       .and('have.attr', 'src', 'assets/images/logo.svg')
       .and('have.attr', 'alt', 'GeniusMoving Logo');
@@ -83,14 +84,14 @@ class LoginPage {
   }
 
   validateEmailValidationError() {
-    this.elements.emailInput().then($el => {
+    this.elements.emailInput().then(($el) => {
       cy.get('[data-cy=email-input]:invalid').should('exist');
     });
     return this;
   }
 
   validatePasswordValidationError() {
-    this.elements.passwordInput().then($el => {
+    this.elements.passwordInput().then(($el) => {
       cy.get('[data-cy=password-input]:invalid').should('exist');
     });
     return this;

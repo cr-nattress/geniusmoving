@@ -1,0 +1,12 @@
+{
+  "root": false,
+  "env": {
+    "cypress/globals": true
+  },
+  "plugins": ["cypress"],
+  "extends": ["plugin:cypress/recommended"],
+  "rules": {
+    "cypress/no-unnecessary-waiting": "warn",
+    "no-unused-vars": "warn"
+  }
+}

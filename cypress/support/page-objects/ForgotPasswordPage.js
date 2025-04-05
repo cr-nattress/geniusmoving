@@ -12,7 +12,7 @@ class ForgotPasswordPage {
     logo: () => cy.get('[data-cy=logo]'),
     forgotPasswordDescription: () => cy.get('[data-cy=forgot-password-description]'),
     errorMessage: () => cy.get('[data-cy=error-message]'),
-    successMessage: () => cy.get('[data-cy=success-message]')
+    successMessage: () => cy.get('[data-cy=success-message]'),
   };
 
   // Actions
@@ -65,20 +65,20 @@ class ForgotPasswordPage {
   }
 
   validateLogo() {
-    this.elements.logo()
-      .should('be.visible');
+    this.elements.logo().should('be.visible');
     return this;
   }
 
   validateDescription() {
-    this.elements.forgotPasswordDescription()
+    this.elements
+      .forgotPasswordDescription()
       .should('be.visible')
       .and('contain', 'Enter your email address');
     return this;
   }
 
   validateEmailValidationError() {
-    this.elements.emailInput().then($el => {
+    this.elements.emailInput().then(($el) => {
       cy.get('[data-cy=email-input]:invalid').should('exist');
     });
     return this;
@@ -106,19 +106,19 @@ class ForgotPasswordPage {
     this.elements.forgotPasswordForm().should('be.visible');
     cy.wait(500); // Wait for any animations
     cy.takeScreenshot('forgot-password-desktop');
-    
+
     // Check tablet view
     cy.viewport(768, 1024);
     this.elements.forgotPasswordForm().should('be.visible');
     cy.wait(500);
     cy.takeScreenshot('forgot-password-tablet');
-    
+
     // Check mobile view
     cy.viewport(375, 667);
     this.elements.forgotPasswordForm().should('be.visible');
     cy.wait(500);
     cy.takeScreenshot('forgot-password-mobile');
-    
+
     return this;
   }
 }

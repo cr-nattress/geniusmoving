@@ -1,0 +1,136 @@
+/* Form component styles */
+
+.input-group {
+  margin-bottom: var(--gm-spacing-lg);
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--gm-spacing-sm);
+  color: var(--gm-color-gray-filled-500);
+  font-size: var(--gm-font-size-sm);
+  font-weight: var(--gm-font-weight-regular);
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  width: 100%;
+  padding: var(--gm-spacing-sm) var(--gm-spacing-md);
+  border: 1px solid var(--gm-color-gray-filled-200);
+  border-radius: var(--gm-border-radius-sm);
+  font-size: var(--gm-font-size-sm);
+  transition: border-color var(--gm-transition-fast);
+  min-height: 44px; /* Touch-friendly size */
+}
+
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='text']:focus {
+  border-color: var(--gm-color-primary-300);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+}
+
+/* Accessible focus state */
+input[type='email']:focus-visible,
+input[type='password']:focus-visible,
+input[type='text']:focus-visible {
+  outline: 2px solid var(--gm-color-primary);
+  outline-offset: 1px;
+}
+
+.forgot-password-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#forgot-password {
+  font-size: var(--gm-font-size-sm);
+  color: var(--gm-color-primary);
+}
+
+.remember-me-container {
+  margin-bottom: var(--gm-spacing-lg);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--gm-font-size-sm);
+}
+
+.remember-me input {
+  margin-right: var(--gm-spacing-sm);
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/* Custom checkbox styling for better accessibility */
+.remember-me input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--gm-color-gray-filled-300);
+  border-radius: 3px;
+  margin-right: var(--gm-spacing-sm);
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background-color: var(--gm-color-primary);
+  border-color: var(--gm-color-primary);
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.remember-me input[type="checkbox"]:focus {
+  outline: 2px solid var(--gm-color-primary-300);
+  outline-offset: 1px;
+}
+
+/* Error styles */
+.input-error {
+  border-color: var(--gm-color-danger) !important;
+}
+
+.error-message {
+  color: var(--gm-color-danger);
+  font-size: var(--gm-font-size-xs);
+  margin-top: var(--gm-spacing-xs);
+  min-height: 18px;
+}
+
+/* Form validation styles */
+input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--gm-color-danger);
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: var(--gm-color-success);
+}
+
+/* Loading state for inputs */
+input.loading {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="%23cccccc"/><path d="M12 4V2C6.48 2 2 6.48 2 12h2c0-4.42 3.58-8 8-8z" fill="%2324b1fd"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></path></svg>');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding-right: 40px;
+}

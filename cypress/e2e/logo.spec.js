@@ -9,7 +9,7 @@ describe('SmartMoving Logo Test', () => {
   it('should display the SVG logo correctly', () => {
     // Use the Page Object to validate the logo
     LoginPage.validateLogo();
-    
+
     // Take a screenshot for visual verification
     cy.takeScreenshot('logo-display');
   });
